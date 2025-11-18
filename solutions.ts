@@ -13,12 +13,6 @@ function formatValue(
   }
 }
 
-// console.log(formatValue("hello"));
-// console.log(formatValue(12));
-// console.log(formatValue(true));
-
-// problem 2
-
 function getLength(value: string | any[]): number {
   if (typeof value === "string") {
     return value.length;
@@ -28,10 +22,7 @@ function getLength(value: string | any[]): number {
     return 0;
   }
 }
-// console.log(getLength("mukto"));
-// console.log(getLength([3, 45, 6, 34, 35, 4]));
 
-// Problem 3
 class Person {
   name: string;
   age: number;
@@ -46,9 +37,7 @@ class Person {
 }
 
 const person1 = new Person("ashiful islam", 23);
-// console.log(person1.getDetails());
 
-// problem -4
 type ItemType = {
   title: string;
   rating: number;
@@ -63,8 +52,6 @@ const books = [
   { title: "Bindur chele", rating: 5.0 },
 ];
 
-// console.log(filterByRating(books));
-
 type User = {
   id: number;
   name: string;
@@ -72,7 +59,7 @@ type User = {
   isActive: boolean;
 };
 
-function filterActiveUser(users: User[]) {
+function filterActiveUsers(users: User[]) {
   return users.filter((user) => user.isActive);
 }
 
@@ -81,31 +68,25 @@ const users = [
   { id: 22, name: "Islam", email: "islam@gmail.com", isActive: false },
   { id: 33, name: "Mukto", email: "mukto@gmail.com", isActive: true },
 ];
-// console.log(filterActiveUser(users));
 
 interface Book {
   title: string;
   author: string;
-  publishYear: number;
+  publishedYear: number;
   isAvailable: boolean;
 }
 
-function printBookDetails(book: Book): void {
+function printBookDetails(book: Book): string {
   const availability = book.isAvailable ? "Yes" : "No";
-  console.log(
-    `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishYear}, Available: ${availability}`
-  );
+  return `Title: ${book.title}, Author: ${book.author}, Published: ${book.publishedYear}, Available: ${availability}`;
 }
 
 const myBook: Book = {
   title: "The alcemist",
   author: "paulo",
-  publishYear: 2002,
+  publishedYear: 2002,
   isAvailable: false,
 };
-// printBookDetails(myBook);
-
-// problem - 7
 
 function getUniqueValues(arr1: (number | string)[], arr2: (number | string)[]) {
   const combined: (number | string)[] = [];
@@ -122,11 +103,9 @@ function getUniqueValues(arr1: (number | string)[], arr2: (number | string)[]) {
       combined.push(value);
     }
   }
-  //   second
   for (let i = 0; i < arr1.length; i++) {
     addUniqueNumber(arr1[i]);
   }
-  //   third
   for (let i = 0; i < arr2.length; i++) {
     addUniqueNumber(arr2[i]);
   }
@@ -135,9 +114,7 @@ function getUniqueValues(arr1: (number | string)[], arr2: (number | string)[]) {
 
 const arr1 = [1, 3, 4, 5, 6];
 const arr2 = [2, 3, 5, 1, 36];
-// console.log(getUniqueValues(arr1, arr2));
 
-// problem 8
 type ProductType = {
   name: string;
   price: number;
@@ -155,8 +132,8 @@ function calculateTotalPrice(products: ProductType[]): number {
 }
 
 const products = [
-  { name: "Pen", price: 10, quantity: 2 }, // 10*2 = 20
-  { name: "Notebook", price: 25, quantity: 3, discount: 10 }, // 25*3=75, discount=7.5 => 67.5
-  { name: "Bag", price: 50, quantity: 1, discount: 20 }, // 50*1=50, discount=10 => 40
+  { name: "Pen", price: 10, quantity: 2 },
+  { name: "Notebook", price: 25, quantity: 3, discount: 10 },
+  { name: "Bag", price: 50, quantity: 1, discount: 20 },
 ];
 console.log(calculateTotalPrice(products));
