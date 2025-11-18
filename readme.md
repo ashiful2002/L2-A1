@@ -60,6 +60,6 @@ function getValue<T, K extends keyof T>(obj: T, key: K): T[K] {
 }
 
 const person: Person = { name: "Rakib", age: 25, email: "rakib@example.com" };
-const personName = getValue(person, "name"); // ঠিক আছে
+const personName = getValue(person, "name"); 
 
 ```
